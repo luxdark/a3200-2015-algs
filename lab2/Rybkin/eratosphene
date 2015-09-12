@@ -2,11 +2,11 @@ import math
 
 def sieve(n):
     if n==1:
-        return [True,]
+        return [False,]
     elif n==2:
-        rutern [True, True]
+        rutern [False, True]
     else:
-        a = [True, True]
+        a = [False, True]
         for x in range(3, n+1):
             m=int(math.sqrt(x))+1
             key=True
