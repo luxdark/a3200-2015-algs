@@ -1,3 +1,5 @@
+__author__ = 'alexkane'
+
 from sys import stdin
 
 first_line = stdin.readline()
