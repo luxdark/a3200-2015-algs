@@ -1,18 +1,19 @@
 import math
 
+
 def sieve(n):
-    if n==1:
-        return [False,]
-    elif n==2:
-        rutern [False, True]
+    if n == 1:
+        return [False, ]
+    elif n == 2:
+        return[False, True]
     else:
         a = [False, True]
-        for x in range(3, n+1):
-            m=int(math.sqrt(x))+1
-            key=True
+        for x in range(3, n + 1):
+            m = int(math.sqrt(x)) + 1
+            key = True
             for z in range(2, m):
-                if x%z==0:
-                    key=False
+                if x % z == 0:
+                    key = False
                     break
             a.append(key)
         return a
