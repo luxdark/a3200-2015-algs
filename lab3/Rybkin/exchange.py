@@ -17,8 +17,8 @@ def rec_exchange(m, n):
         return rec_exchange(m, n - 1) + rec_exchange(m - coin_types[n - 1], n)
 
 
-coin_types = stdin.readline()
 the_amount = stdin.readline()
+coin_types = stdin.readline()
 coin_types = coin_types.split()
 coin_types = [int(i) for i in coin_types]
 coin_types.sort()
