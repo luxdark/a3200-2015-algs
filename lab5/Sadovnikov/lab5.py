@@ -7,7 +7,7 @@ input = [int(s) for s in line.split(' ')]
 
 def quick_sort(array, beginning_index, last_index):
     if beginning_index < last_index:
-        new_ending_index, new_beginning_index = partition(array, beginning_index, last_index)
+        new_ending_index, new_beginning_index = randomized_partition(array, beginning_index, last_index)
         quick_sort(array, beginning_index, new_ending_index)
         quick_sort(array, new_beginning_index + 1, last_index)
 
