@@ -9,16 +9,16 @@ input = [int(s) for s in line.split(' ')]
 
 def sort(a):
     if len(a) < 10:
-        insert_sort(a)
+        insert_sort(a, 0, len(a))
     else:
         merge_sort(a, 0, len(a) - 1)
 
 
-def insert_sort(a):
-    for j in range(1, len(a)):
+def insert_sort(a, p, q):
+    for j in range(p, q + 1):
         key = a[j]
         i = j - 1
-        while i >= 0 and a[i] > key:
+        while i >= p and a[i] > key:
             a[i + 1] = a[i]
             i -= 1
         a[i + 1] = key
@@ -30,11 +30,11 @@ def merge_sort(a, p, r):
         if (p - q) >= 10:
             merge_sort(a, p, q)
         else:
-            insert_sort(a[p:q])
-        if (q + 1 - r) >= 10:
+            insert_sort(a, p, q)
+        if (r - q - 1) >= 10:
             merge_sort(a, q + 1, r)
         else:
-            insert_sort(a[q + 1:r])
+            insert_sort(a, q + 1, r)
         merge(a, p, q, r)
 
 
