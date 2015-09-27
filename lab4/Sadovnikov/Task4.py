@@ -15,7 +15,7 @@ def sort(a):
 
 
 def insert_sort(a, p, q):
-    for j in range(p, q + 1):
+    for j in range(p, q):
         key = a[j]
         i = j - 1
         while i >= p and a[i] > key:
@@ -25,16 +25,18 @@ def insert_sort(a, p, q):
 
 
 def merge_sort(a, p, r):
-    if p < r:
+    if r - p < 10:
+        insert_sort(a, p, r)
+    else:
         q = (p + r) / 2
-        if (p - q) >= 10:
+        if (q - p) >= 10:
             merge_sort(a, p, q)
         else:
-            insert_sort(a, p, q)
+            insert_sort(a, p, q + 1)
         if (r - q - 1) >= 10:
             merge_sort(a, q + 1, r)
         else:
-            insert_sort(a, q + 1, r)
+            insert_sort(a, q + 1, r + 1)
         merge(a, p, q, r)
 
 
