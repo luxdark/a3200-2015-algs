@@ -20,13 +20,16 @@ def example_plot(fig, ax):
     ax.set_title('random [0, 10000]', fontsize=8)
 
 
-fig = plt.figure()
+def show_grid():
+    fig = plt.figure()
+    for i in xrange(2):
+        for j in xrange(3):
+            ax = plt.subplot2grid((2, 3), (i, j))
+            example_plot(fig, ax)
+    plt.legend(loc='upper left', title="funcs")
+    plt.tight_layout()
+    plt.show()
 
-for i in xrange(2):
-    for j in xrange(3):
-        ax = plt.subplot2grid((2, 3), (i, j))
-        example_plot(fig, ax)
 
-plt.legend(loc='upper left', title="funcs")
-plt.tight_layout()
-plt.show()
+if __name__ == "__main__":
+    show_grid()
